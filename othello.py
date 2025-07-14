@@ -136,7 +136,7 @@ def safe_face(panda):
     if hasattr(panda, 'face'):
         return panda.face()
     if callable(panda):
-        return "🐼"
+        return "😺"
     return "🐶"
 
 def safe_place(panda, board, stone):
@@ -205,7 +205,7 @@ def play_othello(ai=None, board=None):
         if can_place(board, WHITE):
             x, y = safe_place(ai, board, WHITE)
             if not can_place_x_y(board, WHITE, x, y):
-                print(f'{ai.face()}は、置けないところに置こうとしました', (x, y))
+                print(f'{safe_face(ai)}は、置けないところに置こうとしました', (x, y))
                 print('反則負けです')
                 return
             print(f'{safe_face(ai)}は', (x, y), 'におきました。')
